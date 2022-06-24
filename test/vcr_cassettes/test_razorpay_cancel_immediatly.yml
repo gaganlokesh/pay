@@ -1,0 +1,147 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.razorpay.com/v1/subscriptions
+    body:
+      encoding: UTF-8
+      string: plan_id=plan_JjkGtEmLF2ujkn&total_count=10
+    headers:
+      User-Agent:
+      - Razorpay-Ruby/3.0.0; Ruby/3.1.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Authorization:
+      - Basic cnpwX3Rlc3RfNFpZVnlnZWtVVFFlbTg6WG0yNFhRYnJLZ05xNHBRNWtQVFB2azJz
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 22 Jun 2022 12:23:10 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '481'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, must-revalidate, no-store, nocache, private
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=315360000; includeSubDomains
+      Via:
+      - rws
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Pam:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '{"id":"sub_JkXThlUfVzr1ei","entity":"subscription","plan_id":"plan_JjkGtEmLF2ujkn","status":"created","current_start":null,"current_end":null,"ended_at":null,"quantity":1,"notes":[],"charge_at":null,"start_at":null,"end_at":null,"auth_attempts":0,"total_count":10,"paid_count":0,"customer_notify":true,"created_at":1655900589,"expire_by":null,"short_url":"https:\/\/rzp.io\/i\/BvyHMXNbba","has_scheduled_changes":false,"change_scheduled_at":null,"source":"api","remaining_count":9}'
+  recorded_at: Wed, 22 Jun 2022 12:23:10 GMT
+- request:
+    method: post
+    uri: https://api.razorpay.com/v1/subscriptions/sub_JkXThlUfVzr1ei/cancel
+    body:
+      encoding: UTF-8
+      string: cancel_at_cycle_end=0
+    headers:
+      User-Agent:
+      - Razorpay-Ruby/3.0.0; Ruby/3.1.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Authorization:
+      - Basic cnpwX3Rlc3RfNFpZVnlnZWtVVFFlbTg6WG0yNFhRYnJLZ05xNHBRNWtQVFB2azJz
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 22 Jun 2022 12:23:11 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '546'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, must-revalidate, no-store, nocache, private
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=315360000; includeSubDomains
+      Via:
+      - rws
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Pam:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '{"id":"sub_JkXThlUfVzr1ei","entity":"subscription","plan_id":"plan_JjkGtEmLF2ujkn","customer_id":null,"status":"cancelled","current_start":null,"current_end":null,"ended_at":1655900591,"quantity":1,"notes":[],"charge_at":null,"start_at":null,"end_at":null,"auth_attempts":0,"total_count":10,"paid_count":0,"customer_notify":true,"created_at":1655900589,"expire_by":null,"short_url":"https:\/\/rzp.io\/i\/BvyHMXNbba","has_scheduled_changes":false,"change_scheduled_at":null,"source":"api","payment_method":null,"offer_id":null,"remaining_count":9}'
+  recorded_at: Wed, 22 Jun 2022 12:23:12 GMT
+- request:
+    method: get
+    uri: https://api.razorpay.com/v1/subscriptions/sub_JkXThlUfVzr1ei
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Razorpay-Ruby/3.0.0; Ruby/3.1.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Authorization:
+      - Basic cnpwX3Rlc3RfNFpZVnlnZWtVVFFlbTg6WG0yNFhRYnJLZ05xNHBRNWtQVFB2azJz
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 22 Jun 2022 12:23:12 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '546'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, must-revalidate, no-store, nocache, private
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=315360000; includeSubDomains
+      Via:
+      - rws
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Pam:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '{"id":"sub_JkXThlUfVzr1ei","entity":"subscription","plan_id":"plan_JjkGtEmLF2ujkn","customer_id":null,"status":"cancelled","current_start":null,"current_end":null,"ended_at":1655900591,"quantity":1,"notes":[],"charge_at":null,"start_at":null,"end_at":null,"auth_attempts":0,"total_count":10,"paid_count":0,"customer_notify":true,"created_at":1655900589,"expire_by":null,"short_url":"https:\/\/rzp.io\/i\/BvyHMXNbba","has_scheduled_changes":false,"change_scheduled_at":null,"source":"api","payment_method":null,"offer_id":null,"remaining_count":9}'
+  recorded_at: Wed, 22 Jun 2022 12:23:12 GMT
+recorded_with: VCR 6.1.0

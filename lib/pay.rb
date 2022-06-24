@@ -18,6 +18,7 @@ module Pay
   autoload :FakeProcessor, "pay/fake_processor"
   autoload :Paddle, "pay/paddle"
   autoload :Stripe, "pay/stripe"
+  autoload :Razorpay, "pay/razorpay"
 
   autoload :Webhooks, "pay/webhooks"
 
@@ -50,7 +51,7 @@ module Pay
   @@routes_path = "/pay"
 
   mattr_accessor :enabled_processors
-  @@enabled_processors = [:stripe, :braintree, :paddle]
+  @@enabled_processors = [:stripe, :braintree, :paddle, :razorpay]
 
   mattr_accessor :emails
   @@emails = ActiveSupport::OrderedOptions.new

@@ -22,6 +22,14 @@ paddle:
   quantity: 1
   status: active
 
+razorpay:
+  customer: razorpay
+  name: default
+  processor_id: sub_JkfTsrkCQd6Gdw
+  processor_plan: plan_JSO9sX3CbJy73r
+  quantity: 1
+  status: active
+
 fake:
   customer: fake
   name: default
@@ -90,3 +98,11 @@ stripe_with_items:
           type: "recurring"
           unit_amount: null
           unit_amount_decimal: "0.8"
+
+razorpay_unauthenticated:
+  customer: pending_razorpay
+  name: default
+  processor_id: sub_Jl363MsPi27RHB
+  processor_plan: plan_JSO9sX3CbJy73r
+  quantity: 1
+  status: created

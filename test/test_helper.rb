@@ -12,9 +12,14 @@ paddle_public_key = OpenSSL::PKey::RSA.new(File.read("test/support/fixtures/padd
 ENV["PADDLE_PUBLIC_KEY_BASE64"] = Base64.encode64(paddle_public_key.to_der)
 ENV["PADDLE_ENVIRONMENT"] = "sandbox"
 
+# Razorpay configuration
+ENV["RAZORPAY_KEY_ID"] = "rzp_test_4ZYVygekUTQem8"
+ENV["RAZORPAY_KEY_SECRET"] = "Xm24XQbrKgNq4pQ5kPTPvk2s"
+
 require "braintree"
 require "stripe"
 require "paddle_pay"
+require "razorpay"
 require "receipts"
 
 require File.expand_path("dummy/config/environment.rb", __dir__)

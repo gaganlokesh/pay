@@ -27,6 +27,7 @@ module Pay
       Pay::Stripe.setup if Pay::Stripe.enabled?
       Pay::Braintree.setup if Pay::Braintree.enabled?
       Pay::Paddle.setup if Pay::Paddle.enabled?
+      Pay::Razorpay.setup if Pay::Razorpay.enabled?
 
       if defined?(::Receipts::VERSION)
         if Pay::Engine.version_matches?(required: "~> 2", current: ::Receipts::VERSION)

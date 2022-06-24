@@ -18,6 +18,7 @@ gem "overcommit"
 gem "braintree", ">= 2.92.0"
 gem "stripe", "~> 6.2"
 gem "paddle_pay", "~> 0.2.0"
+gem "razorpay", "~> 3.0.0"
 
 gem "receipts"
 gem "prawn", github: "prawnpdf/prawn"
