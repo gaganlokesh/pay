@@ -3,7 +3,9 @@ module Pay
     class Charge
       attr_reader :pay_charge
 
-      delegate :processor_id, to: :pay_charge
+      delegate :amount,
+        :processor_id,
+        to: :pay_charge
 
       def initialize(pay_charge)
         @pay_charge = pay_charge
@@ -15,7 +17,7 @@ module Pay
         raise Pay::Braintree::Error, e
       end
 
-      def refund!(amount_to_refund)
+      def refund!(amount_to_refund = amount)
         Pay.braintree_gateway.transaction.refund(processor_id, amount_to_refund / 100.0)
         pay_charge.update(amount_refunded: amount_to_refund)
       rescue ::Braintree::BraintreeError => e

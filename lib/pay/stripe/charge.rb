@@ -120,7 +120,7 @@ module Pay
       # refund!
       # refund!(5_00)
       # refund!(5_00, refund_application_fee: true)
-      def refund!(amount_to_refund, **options)
+      def refund!(amount_to_refund = amount, **options)
         if invoice_id.present?
           description = options.delete(:description) || I18n.t("refund")
           lines = [{type: :custom_line_item, description: description, quantity: 1, unit_amount: amount_to_refund}]

@@ -3,7 +3,10 @@ module Pay
     class Charge
       attr_reader :pay_charge
 
-      delegate :processor_id, :customer, to: :pay_charge
+      delegate :amount,
+        :processor_id,
+        :customer,
+        to: :pay_charge
 
       def initialize(pay_charge)
         @pay_charge = pay_charge
@@ -18,7 +21,7 @@ module Pay
         raise Pay::Paddle::Error, e
       end
 
-      def refund!(amount_to_refund)
+      def refund!(amount_to_refund = amount)
         return unless customer.subscription
         payments = PaddlePay::Subscription::Payment.list({subscription_id: customer.subscription.processor_id, is_paid: 1})
         if payments.count > 0
