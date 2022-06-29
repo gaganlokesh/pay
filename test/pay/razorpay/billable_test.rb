@@ -14,14 +14,16 @@ class Pay::Razorpay::BillableTest < ActiveSupport::TestCase
   end
 
   test "razorpay can create a subscription with trial" do
-    pay_subscription = @pay_customer.subscribe(
-      name: "starter",
-      plan: "plan_JjkGtEmLF2ujkn",
-      total_count: 10,
-      trial_period_days: 7
-    )
-    assert_not_nil pay_subscription.trial_ends_at
-    assert_equal 7, Time.zone.at(pay_subscription.processor_subscription.start_at).to_date - Time.current.to_date
+    travel_to(VCR.current_cassette&.originally_recorded_at || Time.current) do
+      pay_subscription = @pay_customer.subscribe(
+        name: "starter",
+        plan: "plan_JjkGtEmLF2ujkn",
+        total_count: 10,
+        trial_period_days: 7
+      )
+      assert_not_nil pay_subscription.trial_ends_at
+      assert_equal 7, Time.zone.at(pay_subscription.processor_subscription.start_at).to_date - Time.current.to_date
+    end
   end
 
   test "razorpay fails when subscribing without total_count" do
