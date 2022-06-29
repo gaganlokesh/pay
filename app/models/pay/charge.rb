@@ -42,8 +42,11 @@ module Pay
     store_accessor :data, :total_discount_amounts # array of discount details
     store_accessor :data, :total_tax_amounts # array of tax details for each jurisdiction
 
+    # Razorpay attributes
+    store_accessor :data, :razorpay_order_id
+
     # Helpers for payment processors
-    %w[braintree stripe paddle fake_processor].each do |processor_name|
+    %w[braintree stripe paddle razorpay fake_processor].each do |processor_name|
       define_method "#{processor_name}?" do
         customer.processor == processor_name
       end

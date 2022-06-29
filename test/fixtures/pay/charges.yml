@@ -17,3 +17,13 @@ braintree:
     payment_method_type: paypal
     brand: PayPal
     email: test@example.org
+
+razorpay:
+  customer: razorpay
+  processor_id: pay_JkfXzlRImoMbpO
+  amount: 1500
+  subscription: razorpay
+  data:
+    payment_method_type: card
+    brand: MasterCard
+    email: test@example.org

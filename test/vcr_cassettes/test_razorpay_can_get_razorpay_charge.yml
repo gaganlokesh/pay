@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.razorpay.com/v1/payments/pay_JkfXzlRImoMbpO
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Razorpay-Ruby/3.0.0; Ruby/3.1.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Authorization:
+      - Basic cnpwX3Rlc3RfNFpZVnlnZWtVVFFlbTg6WG0yNFhRYnJLZ05xNHBRNWtQVFB2azJz
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 27 Jun 2022 19:35:13 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '675'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, must-revalidate, no-store, nocache, private
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=315360000; includeSubDomains
+      Uber-Trace-Id:
+      - 0afe5b70ae3960efc34ca82651b55a8a:ebe547ec02ef91aa:0000000000000000:1
+      Via:
+      - rws
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Pam:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '{"id":"pay_JkfXzlRImoMbpO","entity":"payment","amount":59900,"currency":"INR","status":"captured","order_id":"order_JkfTtQpdYFCVkW","invoice_id":"inv_JkfTtPSFsEI6Cb","international":false,"method":"card","amount_refunded":59800,"refund_status":"partial","captured":true,"description":null,"card_id":"card_JkfXzupVoTNhPl","bank":null,"wallet":null,"vpa":null,"email":"user@example.com","contact":"+918892399943","customer_id":"cust_JjpKorNjqPQgIq","token_id":"token_JjpKp1Zezp2D0M","notes":[],"fee":1498,"tax":0,"error_code":null,"error_description":null,"error_source":null,"error_step":null,"error_reason":null,"acquirer_data":{"auth_code":"218904"},"created_at":1655929007}'
+  recorded_at: Mon, 27 Jun 2022 19:35:13 GMT
+recorded_with: VCR 6.1.0

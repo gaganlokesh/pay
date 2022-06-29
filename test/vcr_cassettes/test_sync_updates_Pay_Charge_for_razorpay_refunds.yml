@@ -1,0 +1,153 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.razorpay.com/v1/payments/pay_JkfXzlRImoMbpO
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Razorpay-Ruby/3.0.0; Ruby/3.1.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Authorization:
+      - Basic cnpwX3Rlc3RfNFpZVnlnZWtVVFFlbTg6WG0yNFhRYnJLZ05xNHBRNWtQVFB2azJz
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 27 Jun 2022 19:21:47 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '675'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, must-revalidate, no-store, nocache, private
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=315360000; includeSubDomains
+      Uber-Trace-Id:
+      - dec187c2316517d15178b9c5c869e825:dedfb161c12286c3:0000000000000000:1
+      Via:
+      - rws
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Pam:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '{"id":"pay_JkfXzlRImoMbpO","entity":"payment","amount":59900,"currency":"INR","status":"captured","order_id":"order_JkfTtQpdYFCVkW","invoice_id":"inv_JkfTtPSFsEI6Cb","international":false,"method":"card","amount_refunded":59800,"refund_status":"partial","captured":true,"description":null,"card_id":"card_JkfXzupVoTNhPl","bank":null,"wallet":null,"vpa":null,"email":"user@example.com","contact":"+918892399943","customer_id":"cust_JjpKorNjqPQgIq","token_id":"token_JjpKp1Zezp2D0M","notes":[],"fee":1498,"tax":0,"error_code":null,"error_description":null,"error_source":null,"error_step":null,"error_reason":null,"acquirer_data":{"auth_code":"218904"},"created_at":1655929007}'
+  recorded_at: Mon, 27 Jun 2022 19:21:47 GMT
+- request:
+    method: get
+    uri: https://api.razorpay.com/v1/payments/pay_JkfXzlRImoMbpO/card
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Razorpay-Ruby/3.0.0; Ruby/3.1.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Authorization:
+      - Basic cnpwX3Rlc3RfNFpZVnlnZWtVVFFlbTg6WG0yNFhRYnJLZ05xNHBRNWtQVFB2azJz
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 27 Jun 2022 19:21:47 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '206'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, must-revalidate, no-store, nocache, private
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=315360000; includeSubDomains
+      Uber-Trace-Id:
+      - d101bb936ed0b52b9ffb9074a2eb82f2:d1703a0f4a969d08:0000000000000000:1
+      Via:
+      - rws
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Pam:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '{"id":"card_JkfXzupVoTNhPl","entity":"card","name":"Test User","last4":"5449","network":"MasterCard","type":"credit","issuer":"UTIB","international":false,"emi":false,"sub_type":"consumer","token_iin":null}'
+  recorded_at: Mon, 27 Jun 2022 19:21:47 GMT
+- request:
+    method: get
+    uri: https://api.razorpay.com/v1/invoices/inv_JkfTtPSFsEI6Cb
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Razorpay-Ruby/3.0.0; Ruby/3.1.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Authorization:
+      - Basic cnpwX3Rlc3RfNFpZVnlnZWtVVFFlbTg6WG0yNFhRYnJLZ05xNHBRNWtQVFB2azJz
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 27 Jun 2022 19:21:49 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1594'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, must-revalidate, no-store, nocache, private
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=315360000; includeSubDomains
+      Uber-Trace-Id:
+      - 3b14eaefda73712c0c55561d47359403:b7a6417e40f1bc20:0000000000000000:1
+      Via:
+      - rws
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Pam:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '{"amount":59900,"amount_due":0,"amount_paid":59900,"billing_end":1658514600,"billing_start":1655929007,"cancelled_at":null,"comment":null,"created_at":1655928773,"currency":"INR","currency_symbol":"\u20b9","customer_details":{"billing_address":null,"contact":"+918892399943","customer_contact":"+918892399943","customer_email":"user@example.com","customer_name":"","email":"user@example.com","gstin":"","id":"cust_JjpKorNjqPQgIq","name":"","shipping_address":null},"customer_id":"cust_JjpKorNjqPQgIq","date":1655928773,"description":null,"email_status":null,"entity":"invoice","expire_by":null,"expired_at":null,"first_payment_min_amount":null,"gross_amount":59900,"group_taxes_discounts":false,"id":"inv_JkfTtPSFsEI6Cb","idempotency_key":null,"invoice_number":null,"issued_at":1655928773,"line_items":[{"amount":59900,"currency":"INR","description":null,"gross_amount":59900,"hsn_code":null,"id":"li_JkfTtPsfe1oLd9","item_id":null,"name":"Starter","net_amount":59900,"quantity":1,"ref_id":null,"ref_type":null,"sac_code":null,"tax_amount":0,"tax_inclusive":false,"tax_rate":null,"taxable_amount":59900,"taxes":[],"type":"plan","unit":null,"unit_amount":59900}],"notes":[],"order_id":"order_JkfTtQpdYFCVkW","paid_at":1655929022,"partial_payment":false,"payment_id":"pay_JkfXzlRImoMbpO","receipt":null,"reminder_status":null,"short_url":"https:\/\/rzp.io\/i\/Eocm9MqpY","sms_status":null,"status":"paid","subscription_id":"sub_JkfTsrkCQd6Gdw","subscription_status":null,"supply_state_code":null,"tax_amount":0,"taxable_amount":59900,"terms":null,"type":"invoice","user_id":null,"view_less":true}'
+  recorded_at: Mon, 27 Jun 2022 19:21:49 GMT
+recorded_with: VCR 6.1.0

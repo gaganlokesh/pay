@@ -1,6 +1,7 @@
 module Pay
   module Razorpay
     autoload :Billable, "pay/razorpay/billable"
+    autoload :Charge, "pay/razorpay/charge"
     autoload :Error, "pay/razorpay/error"
     autoload :Subscription, "pay/razorpay/subscription"
 
