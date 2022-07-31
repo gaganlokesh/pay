@@ -21,6 +21,7 @@ module Pay
       Pay::Stripe.configure_webhooks if Pay::Stripe.enabled?
       Pay::Braintree.configure_webhooks if Pay::Braintree.enabled?
       Pay::Paddle.configure_webhooks if Pay::Paddle.enabled?
+      Pay::Razorpay.configure_webhooks if Pay::Razorpay.enabled?
     end
 
     config.to_prepare do
