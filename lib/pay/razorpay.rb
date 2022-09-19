@@ -8,6 +8,7 @@ module Pay
     module Webhooks
       autoload :RefundProcessed, "pay/razorpay/webhooks/refund_processed"
       autoload :SubscriptionActivated, "pay/razorpay/webhooks/subscription_activated"
+      autoload :SubscriptionCancelled, "pay/razorpay/webhooks/subscription_cancelled"
       autoload :SubscriptionCharged, "pay/razorpay/webhooks/subscription_charged"
       autoload :SubscriptionCompleted, "pay/razorpay/webhooks/subscription_completed"
       autoload :SubscriptionUpdated, "pay/razorpay/webhooks/subscription_updated"
@@ -45,6 +46,7 @@ module Pay
       Pay::Webhooks.configure do |events|
         events.subscribe "razorpay.refund.processed", Pay::Razorpay::Webhooks::RefundProcessed.new
         events.subscribe "razorpay.subscription.activated", Pay::Razorpay::Webhooks::SubscriptionActivated.new
+        events.subscribe "razorpay.subscription.cancelled", Pay::Razorpay::Webhooks::SubscriptionCancelled.new
         events.subscribe "razorpay.subscription.charged", Pay::Razorpay::Webhooks::SubscriptionCharged.new
         events.subscribe "razorpay.subscription.completed", Pay::Razorpay::Webhooks::SubscriptionCompleted.new
         events.subscribe "razorpay.subscription.updated", Pay::Razorpay::Webhooks::SubscriptionUpdated.new
