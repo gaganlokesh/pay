@@ -53,13 +53,15 @@ module Pay
           object.status
         end
 
-        # Razorpay subscription supports trial by setting the start date of the subscription to a future date.
+        # Razorpay supports trial for subscriptions by setting the start date to a future date.
         # We can check the `start_at` value to determine if the subscription is on trial or not.
-        if object.start_at > Time.current.to_i
-          attributes[:trial_ends_at] = Time.at(object.start_at)
+        if object.start_at && object.start_at > Time.current.to_i
+          attributes[:trial_ends_at] = Time.at(object.ended_at || object.start_at)
         end
 
-        attributes[:ends_at] = Time.at(object.ended_at || object.end_at)
+        if object.ended_at
+          attributes[:ends_at] = Time.at(object.ended_at)
+        end
 
         # Update the subscription
         pay_subscription.with_lock { pay_subscription.update!(attributes) }
@@ -77,19 +79,19 @@ module Pay
       end
 
       def cancel(**options)
-        rs = ::Razorpay::Subscription.cancel(processor_id, {cancel_at_cycle_end: 1})
-
         if on_trial?
+          ::Razorpay::Subscription.cancel(processor_id)
           pay_subscription.update(ends_at: trial_ends_at, status: :canceled)
         else
-          pay_subscription.update(ends_at: Time.at(rs.current_end), status: :canceled)
+          rs = ::Razorpay::Subscription.cancel(processor_id, {cancel_at_cycle_end: 1})
+          pay_subscription.update(ends_at: Time.at(rs.current_end))
         end
       rescue ::Razorpay::Error => e
         raise Pay::Razorpay::Error, e
       end
 
       def cancel_now!(**options)
-        ::Razorpay::Subscription.cancel(processor_id, {cancel_at_cycle_end: 0})
+        ::Razorpay::Subscription.cancel(processor_id)
         pay_subscription.update(ends_at: Time.current, status: :canceled)
       rescue ::Razorpay::Error => e
         raise Pay::Razorpay::Error, e

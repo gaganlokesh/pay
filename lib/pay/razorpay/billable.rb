@@ -44,15 +44,13 @@ module Pay
 
         # Save Pay::Subscription
         trial_ends_at = Time.at(rs.start_at) if rs.start_at.present? && (rs.start_at > Time.current.to_i)
-        ends_at = Time.at(rs.ended_at || rs.end_at) if rs.ended_at.present? || rs.end_at.present?
         pay_customer.subscriptions.create!(
           name: name,
           processor_id: rs.id,
           processor_plan: rs.plan_id,
           status: rs.status,
           quantity: rs.quantity,
-          trial_ends_at: trial_ends_at,
-          ends_at: ends_at
+          trial_ends_at: trial_ends_at
         )
       rescue ::Razorpay::Error => e
         raise Pay::Razorpay::Error, e

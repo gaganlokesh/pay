@@ -23,13 +23,12 @@ class Pay::Razorpay::SubscriptionTest < ActiveSupport::TestCase
     pay_subscription = @pay_customer.subscription
     pay_subscription.cancel
     assert_equal pay_subscription.ends_at.to_date, Time.zone.at(pay_subscription.processor_subscription.current_end).to_date
-    assert_equal "canceled", pay_subscription.status
   end
 
   test "razorpay cancel immediatly" do
     pay_subscription = @pay_customer.subscribe(name: "starter", plan: "plan_JjkGtEmLF2ujkn", total_count: 10)
     pay_subscription.cancel_now!
-    assert_not_nil pay_subscription.processor_subscription.ended_at
+    pay_subscription = pay_subscription.sync!
     assert pay_subscription.ends_at <= Time.current
     assert_equal "canceled", pay_subscription.status
   end
